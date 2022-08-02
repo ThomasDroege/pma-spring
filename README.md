@@ -2,7 +2,7 @@
 
 **Spring Boot** Web app, managed with **maven** which goal is to create projects, assign employees to them and track the progress of the projects. Simple frontend made with **thymeleaf** template engine and visualization of project status with **javascript**.
 
-Connection to dev database with **PostgreSQL**, **docker** image and possibility to use **aws** for production environment.
+Connection to dev database with **PostgreSQL**.
 
 
 ## Screenshots
