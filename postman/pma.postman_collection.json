@@ -18,6 +18,24 @@
 					"response": []
 				},
 				{
+					"name": "/employees",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"firstname\": \"Thomas\",\r\n    \"lastname\": \"Test\",\r\n    \"email\": \"Teeee@ra.da\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/app-api/employees"
+					},
+					"response": []
+				},
+				{
 					"name": "/employees/{id}",
 					"request": {
 						"method": "GET",
@@ -45,7 +63,7 @@
 					"response": []
 				},
 				{
-					"name": "/employees/{id} Copy",
+					"name": "/employees",
 					"request": {
 						"method": "PUT",
 						"header": [],
