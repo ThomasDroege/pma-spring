@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "af40945c-5c63-4be2-a921-50b89ece0593",
+		"name": "pma",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/app-api/employees",
+			"item": [
+				{
+					"name": "/employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/app-api/employees"
+					},
+					"response": []
+				},
+				{
+					"name": "/employees/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/app-api/employees/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"app-api",
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/employees/{id} Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeId\": 1,\r\n    \"firstname\": \"Thomas\",\r\n    \"lastname\": \"Test\",\r\n    \"email\": \"Teeee@ra.da\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/app-api/employees"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
