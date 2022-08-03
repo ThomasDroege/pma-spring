@@ -12,13 +12,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.thomas.pma.validators.UniqueValue;
 
 @Entity
 public class Employee {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="employee_generator")
 	@SequenceGenerator(name="employee_generator", sequenceName="employee_seq", allocationSize= 10)
@@ -26,15 +28,15 @@ public class Employee {
 
 	//ValidationRule
 	//@NotNull
-	//@Size(min = 2, max = 50)
+	@Size(min = 2, max = 50)
 	private String firstname;
 	
 	//@NotNull
-	//@Size(min = 1, max = 50)
+	@Size(min = 1, max = 50)
 	private String lastname;
 	
 	//@NotNull
-	//@Email
+	@Email
 	@UniqueValue
 	private String email;
 	

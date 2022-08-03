@@ -7,7 +7,9 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.thomas.pma.dto.ChartData;
 import com.thomas.pma.entities.Project;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ProjectRepository extends PagingAndSortingRepository<Project, Long>{
 	
 	@Override

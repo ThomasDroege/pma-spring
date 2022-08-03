@@ -21,37 +21,48 @@ public class EmployeeController {
 
 	@Autowired
 	EmployeeService empService;
-	
-	
+
+
 
 
 	@GetMapping
-	public String displayEmployees(Model model) {	
+	public String displayEmployees(Model model) {
 		List<Employee> employees = empService.getAll();
 		model.addAttribute("employeesList", employees);
 		return "employees/list-employees";
 	}
-	
-	
+
+
 	@GetMapping("/new")
 	public String displayEmployeeForm(Model model) {
-		
+
 		Employee aEmployee = new Employee();
-		
+
 		model.addAttribute("employee", aEmployee);
-		
+
 		return "employees/new-employee";
 	}
-	
-	
-	
+
+
+	@GetMapping("/")
+	public String errorForm(Model model, Employee employee) {
+		return "employees/list-employees";
+	}
+
+
 	@PostMapping("/save")
-	public String createEmployee(Employee employee, Model model) {
-	
+	public String createEmployee(@Valid Employee employee, Model model, BindingResult bindingResult) {
+
+
+		if(bindingResult.hasErrors()) {
+			empService.save(employee);
+			return "employees/list-employees";
+		}
+
 		empService.save(employee);
 		return "redirect:/employees";
 	}
-	
 
-	
+
+
 }
